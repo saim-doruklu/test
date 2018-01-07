@@ -1,0 +1,56 @@
+group 'demo'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    orgSpringFrameworkVersion="5.0.2.RELEASE"
+    orgSpringFrameworkSecurityVersion="5.0.0.RELEASE"
+    orgSpringFrameworkDataVersion="2.0.2.RELEASE"
+    hibernateVersion="4.3.11.Final"
+    hibernateEnversVersion="5.2.12.Final"
+    mysqlConnectorJavaVersion="5.1.40"
+    tomcatDbcpVersion="8.5.8"
+    jtaVersion="1.1"
+    hsqldbVersion="2.3.4"
+    hibernateValidatorVersion="5.3.3.Final"
+    javaxElApiVersion="2.2.5"
+    guavaVersion="19.0"
+    commonsLang3Version="3.5"
+    httpcoreVersion="4.4.1"
+    httpclientVersion="4.5"
+    restAssuredVersion="2.9.0"
+    mavenResourcesPluginVersion="2.7"
+    cargoMaven2PluginVersion="1.6.1"
+    hibernate4MavenPluginVersion="1.1.0"
+}
+
+dependencies {
+    compile "org.springframework:spring-aspects:$orgSpringFrameworkVersion"
+    compile ("org.springframework:spring-context:$orgSpringFrameworkVersion"){
+        exclude group: "commons-logging"
+    }
+    compile "org.springframework.security:spring-security-core:$orgSpringFrameworkSecurityVersion"
+    compile "org.springframework:spring-orm:$orgSpringFrameworkVersion"
+    compile "org.springframework.data:spring-data-jpa:$orgSpringFrameworkDataVersion"
+    compile "org.hibernate:hibernate-core:$hibernateVersion"
+    compile "org.hibernate:hibernate-envers:$hibernateEnversVersion"
+    compile "javax.transaction:jta:$jtaVersion"
+    compile "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
+    compile "org.apache.tomcat:tomcat-dbcp:$tomcatDbcpVersion"
+    compile "org.hibernate:hibernate-validator:$hibernateValidatorVersion"
+    compile "javax.el:javax.el-api:$javaxElApiVersion"
+    compile "com.google.guava:guava:$guavaVersion"
+    testCompile "org.apache.commons:commons-lang3:$commonsLang3Version"
+    testCompile "org.springframework:spring-test:$orgSpringFrameworkVersion"
+    testCompile "org.springframework.security:spring-security-test:$orgSpringFrameworkSecurityVersion"
+    testCompile "org.hsqldb:hsqldb:$hsqldbVersion"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
