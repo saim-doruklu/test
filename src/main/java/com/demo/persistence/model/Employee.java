@@ -83,7 +83,7 @@ public class Employee implements Serializable {
     }
 
     public OPERATION getOperation() {
-        return OPERATION.parse(operation);;
+        return OPERATION.parse(operation);
     }
 
     public void setOperation(OPERATION operation) {
