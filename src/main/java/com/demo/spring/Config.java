@@ -1,4 +1,4 @@
-package com.demo.persistence;
+package com.demo.spring;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
